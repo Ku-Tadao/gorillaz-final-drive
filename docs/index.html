@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Drive Preservation Kit</title>
+  <meta name="description" content="An unofficial GitHub Pages preservation hub for Gorillaz' Final Drive, with setup notes, modern Windows helper tools, and historical context.">
+  <meta name="theme-color" content="#101412">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <div class="page-grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <p class="topbar__kicker">Unofficial Preservation Hub</p>
+    <a class="topbar__link" href="https://github.com/Ku-Tadao/gorillaz-final-drive-preservation-kit">View Repository</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero panel panel--hero">
+      <div class="hero__copy">
+        <p class="eyebrow">Gorillaz Phase 1 • 2001 • Director / Shockwave 3D</p>
+        <h1>Final Drive</h1>
+        <p class="hero__lede">
+          A public-facing setup page for the Geep Simulator: historical notes, modern Windows helper tools,
+          and a clean path for preserving your own copy.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="downloads/final-drive-preservation-tools.zip">Download Preservation Tools</a>
+          <a class="button button--ghost" href="#setup">Read Setup Guide</a>
+        </div>
+
+        <ul class="fact-strip" aria-label="Game facts">
+          <li>Developer: Zombie Flesh Eaters</li>
+          <li>Designer: Matt Watkins</li>
+          <li>Also known as: Geep Simulator</li>
+          <li>Release: June 2001</li>
+        </ul>
+      </div>
+
+      <aside class="hero__status panel panel--dark">
+        <p class="status__label">Repository Scope</p>
+        <h2>Public-safe by design</h2>
+        <p>
+          This project publishes documentation, helper scripts, and GitHub Pages assets.
+          It does not redistribute the original game executable, Xtras, or proprietary runtime files.
+        </p>
+
+        <div class="status__meter" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="status__meter--hot"></span>
+        </div>
+
+        <dl class="spec-list">
+          <div>
+            <dt>Primary goal</dt>
+            <dd>Modern Windows playback support</dd>
+          </div>
+          <div>
+            <dt>Browser build</dt>
+            <dd>Not available</dd>
+          </div>
+          <div>
+            <dt>Pages role</dt>
+            <dd>Landing page and tool delivery</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="warning panel panel--warning">
+      <p>
+        <strong>Important:</strong> You still need your own copy of the original game data. This site is for preservation,
+        setup, and documentation. It is not a browser port and it does not host the commercial game package itself.
+      </p>
+    </section>
+
+    <section class="grid-three">
+      <article class="panel card">
+        <p class="card__eyebrow">What It Was</p>
+        <h2>Phase 1 web-era driving experiment</h2>
+        <p>
+          Final Drive put the band into the Geep and dropped players into a limited 3D environment inspired by the 19-2000 world.
+          It originally lived on Gorillaz.com and later appeared on official media releases.
+        </p>
+      </article>
+
+      <article class="panel card">
+        <p class="card__eyebrow">How This Repo Helps</p>
+        <h2>Launcher, patch notes, and setup flow</h2>
+        <p>
+          The public downloads here focus on the modern-Windows side: launcher behavior, IML32 patching instructions,
+          and a straightforward checklist for assembling a working local copy.
+        </p>
+      </article>
+
+      <article class="panel card">
+        <p class="card__eyebrow">Why Pages</p>
+        <h2>A clean front door</h2>
+        <p>
+          GitHub Pages is ideal for a project page, setup guide, and public-safe tooling. It is not a place to execute the old Shockwave game directly.
+        </p>
+      </article>
+    </section>
+
+    <section id="setup" class="panel section-block">
+      <div class="section-block__heading">
+        <p class="eyebrow">Setup Guide</p>
+        <h2>How to use the preservation tools</h2>
+      </div>
+
+      <ol class="step-list">
+        <li>
+          <h3>Start with your own original files</h3>
+          <p>Use a legitimately obtained copy from an official source such as the original release media or archived personal backup.</p>
+        </li>
+        <li>
+          <h3>Drop in the launcher</h3>
+          <p>Place <code>Play Gorillaz.bat</code> beside <code>gorillaz_final_drive.exe</code>.</p>
+        </li>
+        <li>
+          <h3>Patch your local IML32 build</h3>
+          <p>Run the included PowerShell helper against your own <code>IML32.dll</code> to avoid the old Director memory crash path.</p>
+          <div class="command-box">
+            <code>powershell -ExecutionPolicy Bypass -File .\tools\patch_iml32.ps1 .\IML32.dll</code>
+            <button type="button" data-copy="powershell -ExecutionPolicy Bypass -File .\tools\patch_iml32.ps1 .\IML32.dll">Copy</button>
+          </div>
+        </li>
+        <li>
+          <h3>Keep the runtime layout intact</h3>
+          <p>The EXE, launcher, required runtime files, and the <code>xtras</code> folder all need to stay together.</p>
+        </li>
+        <li>
+          <h3>Launch through the batch file</h3>
+          <p>The launcher shortens TEMP paths, forces the most stable renderer path, disables the worst compatibility traps, and pins the game to a single CPU core.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="dual-section">
+      <article class="panel section-block">
+        <div class="section-block__heading">
+          <p class="eyebrow">Controls</p>
+          <h2>Drive it like it is 2001</h2>
+        </div>
+        <ul class="control-list">
+          <li><span>Arrow keys</span><strong>Throttle, brake, and steering</strong></li>
+          <li><span>R</span><strong>Reset / recover the Geep</strong></li>
+          <li><span>Space</span><strong>Handbrake / stunt-style input</strong></li>
+        </ul>
+      </article>
+
+      <article class="panel section-block">
+        <div class="section-block__heading">
+          <p class="eyebrow">Known Quirks</p>
+          <h2>Authentic rough edges remain</h2>
+        </div>
+        <ul class="plain-list">
+          <li>Physics can still get loose and unpredictable.</li>
+          <li>Some collision oddities are part of the original build.</li>
+          <li>This is a preservation setup, not a rewritten or remastered version.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel section-block">
+      <div class="section-block__heading">
+        <p class="eyebrow">History Snapshot</p>
+        <h2>What made Final Drive memorable</h2>
+      </div>
+
+      <div class="history-grid">
+        <p>
+          Final Drive was built during the era when the Gorillaz website doubled as an experimental multimedia playground.
+          The project used Macromedia Director and Shockwave with a 3D toolchain that let the team create a compact driving sim
+          around the Geep and the 19-2000 aesthetic.
+        </p>
+        <p>
+          It shipped with a small launch UI, looping music, selectable color depth and resolution, and a compact 3D map with ramps,
+          road sections, and scenery that felt halfway between a tech demo and a proper playable bonus game.
+        </p>
+        <p>
+          That browser-plugin era is long gone, but the game still matters as one of the more tangible Phase 1 Gorillaz interactive projects.
+          This repo exists to make the surviving Windows build easier to document and preserve.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel section-block">
+      <div class="section-block__heading">
+        <p class="eyebrow">Downloads</p>
+        <h2>Public-safe package</h2>
+      </div>
+
+      <div class="download-card">
+        <div>
+          <p class="download-card__label">Available now</p>
+          <h3>final-drive-preservation-tools.zip</h3>
+          <p>Launcher, PowerShell patch helper, and offline notes. No original game data included.</p>
+        </div>
+        <a class="button button--primary" href="downloads/final-drive-preservation-tools.zip">Download</a>
+      </div>
+    </section>
+
+    <section class="panel section-block">
+      <div class="section-block__heading">
+        <p class="eyebrow">GitHub CLI</p>
+        <h2>Clone the project</h2>
+      </div>
+
+      <div class="command-box command-box--wide">
+        <code>gh repo clone Ku-Tadao/gorillaz-final-drive-preservation-kit</code>
+        <button type="button" data-copy="gh repo clone Ku-Tadao/gorillaz-final-drive-preservation-kit">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Unofficial preservation project. Gorillaz, Final Drive, and all original assets belong to their respective rights holders.
+      <span id="footer-year"></span>
+    </p>
+  </footer>
+</body>
+</html>

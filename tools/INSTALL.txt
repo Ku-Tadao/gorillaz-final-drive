@@ -1,0 +1,30 @@
+FINAL DRIVE PRESERVATION TOOLS
+=================================
+
+This bundle does not include the original game data.
+
+Use it with your own copy of Final Drive / Geep Simulator.
+
+Recommended layout:
+
+  gorillaz_final_drive.exe
+  Play Gorillaz.bat
+  IML32.dll
+  dirapi.dll
+  DDraw.dll
+  D3DImm.dll
+  xtras\
+
+Setup outline:
+
+1. Copy Play Gorillaz.bat beside gorillaz_final_drive.exe.
+2. Run tools\patch_iml32.ps1 against your local IML32.dll.
+3. Keep the xtras folder beside the EXE.
+4. Launch the game with Play Gorillaz.bat.
+
+What the launcher does:
+
+- Creates a short local TEMP folder.
+- Forces the stable Shockwave 3D renderer path.
+- Applies compatibility flags for older Director runtimes.
+- Locks the game to one CPU core to reduce race-condition crashes.
