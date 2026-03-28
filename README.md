@@ -1,8 +1,8 @@
-# Final Drive Preservation Kit
+# Final Drive
 
-An unofficial preservation kit and GitHub Pages companion for Gorillaz' Final Drive, also known as Geep Simulator.
+Unofficial preservation project for Gorillaz' Final Drive (aka Geep Simulator, 2001). Setup tools, documentation, and a GitHub Pages companion for the surviving Windows build.
 
-This repository is set up to publish a public information page, modern Windows setup notes, and small helper tools. It does **not** include the original copyrighted game data or runtime binaries.
+This repo does **not** include the original game data or runtime binaries.
 
 ## What This Repo Is For
 
@@ -63,7 +63,7 @@ This repo is designed to publish from `docs/` on GitHub Pages.
 
 Expected Pages URL:
 
-- `https://ku-tadao.github.io/gorillaz-final-drive-preservation-kit/`
+- `https://ku-tadao.github.io/gorillaz-final-drive/`
 
 ## Legal Note
 

@@ -1,25 +1,13 @@
-const yearNode = document.getElementById("footer-year");
+document.getElementById("yr").textContent = new Date().getFullYear();
 
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
-
-for (const button of document.querySelectorAll("[data-copy]")) {
-  button.addEventListener("click", async () => {
-    const text = button.getAttribute("data-copy");
-    if (!text) {
-      return;
-    }
-
+document.querySelectorAll("[data-copy]").forEach(btn => {
+  btn.addEventListener("click", async () => {
     try {
-      await navigator.clipboard.writeText(text);
-      const previous = button.textContent;
-      button.textContent = "Copied";
-      window.setTimeout(() => {
-        button.textContent = previous;
-      }, 1200);
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = "Copied!";
+      setTimeout(() => btn.textContent = "Copy", 1200);
     } catch {
-      button.textContent = "Copy failed";
+      btn.textContent = "Failed";
     }
   });
-}
+});
