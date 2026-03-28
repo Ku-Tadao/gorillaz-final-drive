@@ -63,6 +63,8 @@ a { color: inherit; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 920px;
+  margin: 0 auto;
   padding: 1.8rem clamp(1.5rem, 4vw, 3rem) 0;
 }
 
@@ -93,6 +95,7 @@ a { color: inherit; }
   z-index: 1;
   padding: 5rem clamp(1.5rem, 4vw, 3rem) 6rem;
   max-width: 920px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -187,6 +190,7 @@ main {
   position: relative;
   z-index: 1;
   max-width: 920px;
+  margin: 0 auto;
   padding: 0 clamp(1.5rem, 4vw, 3rem) 5rem;
 }
 
