@@ -1,11 +1,4 @@
-# Original game/runtime files are not redistributed in this public repo.
-gorillaz_final_drive.exe
-dirapi.dll
-iml32.dll
-DDraw.dll
-D3DImm.dll
-dgVoodoo.conf
-xtras/
+# Runtime temp
 GameTemp/
 
 # Local clutter
